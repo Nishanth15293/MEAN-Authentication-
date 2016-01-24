@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ACME Financial</title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="module.js"></script>
+
+    <script src ="bower_components/jwt-decode/build/jwt-decode.js"></script>
+
+    <script src="config.js"></script>
+    <script src="run.js"></script>
+    <script src="controllers/mainController.js"></script>
+    <script src="Services/basicServiceFactory.js"></script>
+    <script src="Services/httpInterceptorFactory.js"></script>
+    <link href="stylesheet.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head>
+<body ng-app="application">
+
+
+    <div ui-view >
+       <!-- <div>
+        <h1>ACME Financial</h1>
+        <button type="button" class="btn btn-primary" ui-sref="login">Get Started</button>
+        <button class="btn btn-primary" ng-click="getData()">Get Data</button>
+        <br>-->
+        <div class="indexDiv">
+            <button class="btn btn-info btn-block" ui-sref="login">Click Here to Launch the App</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
