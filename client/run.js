@@ -11,7 +11,13 @@
 
     function run($rootScope, $cookies, basicServiceFactory){
         if($cookies.get('token')){
-            $rootScope.user = jwt_decode($cookies.get('token'));
+            var decoded = jwt_decode($cookies.get('token'));
+            console.log("decoded :");
+            console.log(decoded);
+
+            $rootScope.user = decoded._doc;
+            console.log($rootScope.user);
+
 
            // basicServiceFactory.setUser($rootScope.user);
         }else{

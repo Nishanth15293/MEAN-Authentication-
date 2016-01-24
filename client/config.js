@@ -26,13 +26,13 @@ angular.module('application')
                 templateUrl: './views/start.html'
             })
 
-            .state('signup',{
+            .state('signUp',{
                 url: '/signup',
                 controller: 'mainController',
                 templateUrl: './views/signup.html'
             })
 
-            .state('login',{
+            .state('logIn',{
                 url: '/login',
                 controller: 'mainController',
                 templateUrl: './views/login1.html'

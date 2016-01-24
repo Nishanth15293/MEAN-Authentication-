@@ -19,6 +19,8 @@
         return {
          //  getUser: getUser,
           //  setUser: setUser,
+            get: getHandler,
+            post: postHandler,
             login : login,
             logout : logout
         };
@@ -28,6 +30,20 @@
         function getUser () {
             return user;
         }*/
+        function getHandler(url) {
+            return $http.get(url)
+                .then(function (response) {
+                    return response.data;
+                })
+        }
+        function postHandler(url, payload) {
+            return $http.post(url, payload)
+                .then(function (response) {
+                    return response.data;
+                })
+        }
+
+
        function login (url,payload){
             return $http.post(url,payload).then(function(response){
                 if(response.data.errorMessage){
@@ -36,7 +52,8 @@
                 else{
                     $cookieStore.put("token",response.data.token);
                     console.log(response.data);
-                    $rootScope.user = jwt_decode(response.data.token);
+                   var decoded = jwt_decode(response.data.token);
+                    $rootScope.user = decoded._doc;
                     return "success";
                 }
             })

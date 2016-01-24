@@ -40,6 +40,28 @@ function mainController($scope,$state, $rootScope,  $cookies, basicServiceFactor
         })
     };
 
+    $scope.userSignUp = function() {
+        console.log('user siging up');
+        var payload = {
+            'username': $scope.username,
+            'password': $scope.password,
+            'email': $scope.email
+        };
+        console.log($scope.username + $scope.password);
+        if ($scope.username != null || $scope.password != null || $scope.email != null) {
+            basicServiceFactory.post('/signup', payload).then(function (data) {
+
+                console.log(data);
+                console.log("posted successfully!!");
+                if (data.redirect) {
+                    //$location.path(data.redirect);
+                    $state.go(data.redirect);
+
+                }
+            });
+        }
+    };
+
     $scope.login = function(){
         /*console.log("initiating post data function client side");
         console.log('sending email ' + $scope.email);
@@ -79,9 +101,9 @@ function mainController($scope,$state, $rootScope,  $cookies, basicServiceFactor
         })
     };
 
-    $scope.logout = function(){
+    $rootScope.logout = function(){
         basicServiceFactory.logout().then(function(){
-            $state.go('login');
+            $state.go('logIn');
             });
     };
 
