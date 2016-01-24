@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Simple Developer Exercise 
 
 The savvy cats over at ACME Financial would like to be able to allow users to login to their account, check their balance and update their personal details. Write a simple web application (API and UI) using node.js and lowdb that lets users accomplish those tasks. 
@@ -27,3 +28,7 @@ This exercise is meant showcase your creativity and talent in problem solving ag
 * Fully responsive UI
 * Unit Tests of the API
 * Functional Tests of the UI
+=======
+# iJoin-Assessment
+Flat file JSON db 
+>>>>>>> 72dbe49df880f8fa75be05544f3928d0ed5ce8f9
